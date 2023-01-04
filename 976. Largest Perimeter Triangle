@@ -1,0 +1,22 @@
+property of triangle sum of every two side is greater then third side
+s1+s2>s3||s2+s3>s1||s3+s1>s2
+if array is sorted then we check only one cond s1+s2>s3
+in q we find largest perimeter so largest side in last of soryed array so we check from last
+
+// code
+
+class Solution {
+public:
+    int largestPerimeter(vector<int>& nums) {
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+     
+        for(int i=n-1;i>=2;i--)// i-2 check until if i>=2
+        {
+            if(nums[i-2]+nums[i-1]>nums[i]) // property of traingle
+                return nums[i-2]+nums[i-1]+nums[i];
+            
+        }
+        return 0;
+    }
+};
