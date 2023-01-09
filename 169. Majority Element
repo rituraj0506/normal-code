@@ -1,0 +1,25 @@
+moore voting algo 
+this algo take element as 0 and count as 0 and linearly iterate from first element to the last element 
+check if count of ele is zero then change the ele to its val next step check val equivalent to element than changes it and increase count by 1
+
+int majorityElement(vector<int>& nums) {
+        int n=nums.size();
+        int ele=0,c=0;
+        for(int i=0;i<n;i++)
+        {
+            if(c==0)
+            {
+                ele=nums[i];
+            }
+           
+            if(ele==nums[i])
+            {
+                c++;
+            }
+            else
+                c--;
+        }
+        return ele;
+        
+        t(c)=o(n)
+        s(c)=o(1)
