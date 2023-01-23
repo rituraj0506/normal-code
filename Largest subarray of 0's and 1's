@@ -1,0 +1,23 @@
+int maxLen(int arr[], int n)
+    {
+        unordered_map<int,int>m;
+        int c=0,c1=0,res=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]==0)
+            c++;
+            if(arr[i]==1)
+            c1++;
+            int diff=c-c1;
+            if(diff==0)
+            {
+                res=i+1;
+            }
+          if(m.find(diff)!=m.end())
+             {
+                res=max(res,i-m[diff]);
+             }
+             m.insert({diff,i});
+        }
+        return res;
+    }
