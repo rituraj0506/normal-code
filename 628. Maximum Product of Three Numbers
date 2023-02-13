@@ -1,0 +1,8 @@
+int maximumProduct(vector<int>& nums){
+    // if all ele is pos in array then max prod is last three no
+    // if neg ele then max prod is two neg ele from start and one pos ele from last
+      
+         int n=nums.size();
+        sort(nums.begin(),nums.end());
+        return max(nums[0]*nums[1]*nums[n-1],nums[n-1]*nums[n-2]*nums[n-3]);
+    }
